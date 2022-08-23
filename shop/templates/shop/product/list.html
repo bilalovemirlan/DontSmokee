@@ -1,0 +1,272 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main/main.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    {% if category %}{{ category.name }}{% else %}Products{% endif %}
+{% endblock %}
+{% block content %}
+
+<!--  <div class="collection_text">products</div>-->
+<!--    <div class="collection_section layout_padding">-->
+<!--    	<div class="container">-->
+<!--    		<h1 class="new_text"><strong>New Arrivals Products</strong></h1>-->
+<!--    	    <p class="consectetur_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>-->
+<!--    	</div>-->
+<!--    </div>-->
+<!--    <div class="layout_padding gallery_section">-->
+<!--    	<div class="container">-->
+
+
+<!--<main>-->
+<!--    &lt;!&ndash;!======================== Section 1 Start ========================&ndash;&gt;-->
+<!--        <section class="section1">-->
+<!--            <h2>Special Items</h2>-->
+<!--            <div class="productList">-->
+<!--				{% for product in products %}-->
+<!--                <div data-aos="fade-up" data-aos-duration="500" class="productList__item">-->
+<!--                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt="Item image">-->
+<!--                    <div class="productList__item-description">-->
+<!--                        <h4 class="item-title" >{{ product.name }}</h4>-->
+<!--						<a style="text-decoration: None;" href="{{ product.get_absolute_url }}"><p class="item-price" >{{ product.price }}</p></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--				{% endfor %}-->
+<!--            </div>-->
+<!--        </section>-->
+<!--    &lt;!&ndash;!======================== Section 1 End ========================&ndash;&gt;-->
+
+<!--    &lt;!&ndash;!======================== Section 2 Start ========================&ndash;&gt;-->
+<!--    <div class="section2"></div>-->
+
+<!--    &lt;!&ndash;!======================== Section 2 End ========================&ndash;&gt;-->
+<!--    <div class="section3">-->
+<!--      <h2 class="section3__title" >FAQs</h2>-->
+<!--      <div class="section3__content">-->
+
+<!--        <div class="section3__content-item" data-aos="fade-up" data-aos-duration="800">-->
+<!--          <div class="item__description">-->
+<!--            <h3>Will Vaping Help Me Quit Smoking?</h3>-->
+<!--            <p>Vaping is an alternative for smoking that curbs your nicotine cravings without the hundreds of harmful chemicals found in traditional cigarettes. Vaping is designed to be a safer alternative to smoking that will help you quit smoking. For total beginners, we recommend looking at pen style kits as they are simple to use and usually come with everything you need to get started vaping. We also suggest looking at disposable vapes as they require no set up and come ready to go straight away. If you’re looking for some more info and help with getting started vaping, contact our customer care team.</p>-->
+<!--          </div>-->
+<!--          <div class="item__img">-->
+<!--            <img src="https://d1q4q7ketxgxfn.cloudfront.net/media/catalog/product/cache/312af16b4230f9639b105af4a9030f8d/v/a/vaporesso-gen-200-aurora-green_1.jpg" alt="">-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="section3__content-item reverse" data-aos="fade-up" data-aos-duration="800">-->
+<!--          <div class="item__img">-->
+<!--            <img src="https://d1q4q7ketxgxfn.cloudfront.net/media/catalog/product/cache/312af16b4230f9639b105af4a9030f8d/g/e/geekvape-aegis-max-2-mint-green_1.jpg" alt="">-->
+<!--          </div>-->
+<!--          <div class="item__description">-->
+<!--            <h3>Which Nicotine Strength Is Right For Me?</h3>-->
+<!--            <p>We recommend that the nicotine strength you choose should be largely based on the amount of cigarettes you previously smoked per day. For those that smoked 20+ cigarettes a day, we advise a stronger nicotine strength such as 18mg – 20mg. Nicotine Salts are the best way to vape higher strengths of nicotine due to their unique formulation that gives you a satisfying flavour and throat hit. For those that smoked around 10+ per day, e-liquids range in strength from 5mg – 10mg. It might take some experimenting to find the right nicotine strength for you but using this as a rough guide should help save you some time and money.</p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="section3__content-item" data-aos="fade-up" data-aos-duration="800">-->
+<!--          <div class="item__description">-->
+<!--            <h3>Which E-Liquid Should I Use?</h3>-->
+<!--            <p>E-Liquids come in loads of different flavours, formulations, and sizes. This means that you have plenty of choice to find your favourite all-day vape flavour, however it can be daunting to those that are just starting out. Certain kits work best with specific e-liquids, and so it’s important to get the right e-liquid formulation. When it comes to lower powered kits such as a lot of pod kits or pen kits, then high PG is the best e-liquid to use, however for those wanting to use a higher powered kit, then high VG (also know as sub ohm e-liquid) is what you’ll want. There is also the option to use 50/50 e-liquid which is super versatile and can be used in almost any type of kit.</p>-->
+<!--          </div>-->
+<!--          <div class="item__img">-->
+<!--            <img src="https://d1q4q7ketxgxfn.cloudfront.net/media/catalog/product/cache/312af16b4230f9639b105af4a9030f8d/o/b/obelisk_65_peacock_1.jpg" alt="">-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    </main>-->
+
+
+<!--                    </div>-->
+<!--    			</div>-->
+
+<!--    		</div>-->
+<!--    		<div class="buy_now_bt">-->
+<!--    			<button class="buy_text">Buy Now</button>-->
+<!--    		</div>-->
+<!--    	</div>-->
+<!--    </div>-->
+
+    <main>
+    <!--!======================== Section 1 Start ========================-->
+        <section class="section1">
+            <h2>{% if category %}{{ category.name }}{% else %}POD SYSTEM{% endif %}</h2>
+            <div class="productList">
+                {% for i in products %}
+                <div data-aos="fade-up" data-aos-duration="500" class="productList__item">
+                    <img src="{{ i.image.url }}" alt="Item image">
+                    <div class="productList__item-description">
+                        <h4 class="item-title" >{{ i.name }}</h4>
+                       <a style="text-decoration: None;" href="{{ i.get_absolute_url }}"><p class="item-price" >{{ i.price }} com</p></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    <!--!======================== Section 1 End ========================-->
+
+    <!--!======================== Section 2 Start ========================-->
+    <div class="section2"></div>
+
+    <!--!======================== Section 2 End ========================-->
+
+    <!--!======================== Section 3 Start ====================  -->
+
+    <section class="section1">
+      <h2>Одноразки</h2>
+      <div class="productList">
+          {% for i in products2 %}
+          <div data-aos="fade-up" data-aos-duration="500" class="productList__item">
+              <img src="{{ i.image.url }}" alt="Item image">
+              <div class="productList__item-description">
+                  <h4 class="item-title" >{{ i.name }}</h4>
+                  <a style="text-decoration: None;" href="{{ i.get_absolute_url }}"><p class="item-price" >{{ i.price }} com</p></a>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </section>
+
+    <!-- !======================= Section 3 End ======================== -->
+    <div class="section3" id ="faq">
+      <h2 class="section3__title" >Часто задаваемые вопросы</h2>
+      <div class="section3__content">
+
+        <div class="section3__content-item" data-aos="fade-up" data-aos-duration="800">
+          <div class="item__description">
+            <h3>Поможет ли вейпинг бросить курить?</h3>
+            <p>Вейпинг разработан как более безопасная альтернатива курению, которая поможет вам бросить курить. Для абсолютных новичков мы рекомендуем обратить внимание на наборы в виде ручек, так как они просты в использовании и обычно поставляются со всем необходимым, чтобы начать парить. Мы также предлагаем обратить внимание на одноразовые вейпы, так как они не требуют настройки и сразу готовы к работе. Если вам нужна дополнительная информация и помощь в начале работы с вейпингом, свяжитесь с нашей службой поддержки клиентов.</p>
+          </div>
+          <div class="item__img">
+            <img src="https://d1q4q7ketxgxfn.cloudfront.net/media/catalog/product/cache/312af16b4230f9639b105af4a9030f8d/v/a/vaporesso-gen-200-aurora-green_1.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="section3__content-item reverse" data-aos="fade-up" data-aos-duration="800">
+          <div class="item__img">
+            <img src="https://d1q4q7ketxgxfn.cloudfront.net/media/catalog/product/cache/312af16b4230f9639b105af4a9030f8d/g/e/geekvape-aegis-max-2-mint-green_1.jpg" alt="">
+          </div>
+          <div class="item__description">
+            <h3>Какая концентрация никотина мне подходит?</h3>
+            <p>Мы рекомендуем, чтобы сила никотина, которую вы выбираете, в значительной степени основывалась на количестве сигарет, которые вы ранее выкуривали в день. Для тех, кто выкуривает более 20 сигарет в день, мы рекомендуем более сильную концентрацию никотина, такую как 18–20 мг. Соли никотина — лучший способ вейпинга с более высокой концентрацией никотина благодаря их уникальному составу, который дает вам приятный вкус и удар по горлу. Для тех, кто курил около 10+ сигарет в день, концентрация жидкости для электронных сигарет варьируется от 5 до 10 мг. Может потребоваться некоторое время, чтобы найти правильную концентрацию никотина для вас, но использование этого в качестве приблизительного руководства должно помочь вам сэкономить время и деньги.</p>
+          </div>
+        </div>
+
+        <div class="section3__content-item" data-aos="fade-up" data-aos-duration="800">
+          <div class="item__description">
+            <h3>Какую жидкость для электронных сигарет следует использовать?</h3>
+            <p>Жидкости для электронных сигарет бывают разных вкусов, составов и размеров. Это означает, что у вас есть большой выбор, чтобы найти свой любимый вкус вейпа на весь день, однако это может быть сложно для тех, кто только начинает. Некоторые наборы лучше всего работают с определенными жидкостями для электронных сигарет, поэтому важно подобрать правильный состав жидкости для электронных сигарет. Когда дело доходит до комплектов с более низким энергопотреблением, таких как множество комплектов для стручков или наборов для ручек, тогда лучше всего использовать жидкость с высоким PG, однако для тех, кто хочет использовать комплект с более высокой мощностью, тогда высокий VG (также известный как субомный) жидкость для электронных сигарет) — это то, что вам нужно. Существует также возможность использовать жидкость для электронных сигарет 50/50, которая очень универсальна и может использоваться практически в любом типе комплекта.</p>
+          </div>
+          <div class="item__img">
+            <img src="https://d1q4q7ketxgxfn.cloudfront.net/media/catalog/product/cache/312af16b4230f9639b105af4a9030f8d/o/b/obelisk_65_peacock_1.jpg" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    </main>
+<!--<main>-->
+<!--    &lt;!&ndash;!======================== Section 1 Start ========================&ndash;&gt;-->
+<!--        <section class="section1">-->
+<!--            <h2>Special Items</h2>-->
+<!--            <div class="productList">-->
+<!--				{% for product in products %}-->
+<!--                <div data-aos="fade-up" data-aos-duration="500" class="productList__item">-->
+<!--                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="Item image">-->
+<!--                    <div class="productList__item-description">-->
+<!--                        <h4 class="item-title" >{{ product.name }}</h4>-->
+<!--						<a style="text-decoration: None;" href="{{ product.get_absolute_url }}"><p class="item-price" >{{ product.price }}</p></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--				{% endfor %}-->
+<!--            </div>-->
+<!--        </section>-->
+<!--    &lt;!&ndash;!======================== Section 1 End ========================&ndash;&gt;-->
+
+<!--    &lt;!&ndash;!======================== Section 2 Start ========================&ndash;&gt;-->
+<!--    <div class="section2"></div>-->
+
+<!--    &lt;!&ndash;!======================== Section 2 End ========================&ndash;&gt;-->
+<!--    <div class="section3">-->
+<!--      <h2 class="section3__title" >FAQs</h2>-->
+<!--      <div class="section3__content">-->
+
+<!--        <div class="section3__content-item" data-aos="fade-up" data-aos-duration="800">-->
+<!--          <div class="item__description">-->
+<!--            <h3>Will Vaping Help Me Quit Smoking?</h3>-->
+<!--            <p>Vaping is an alternative for smoking that curbs your nicotine cravings without the hundreds of harmful chemicals found in traditional cigarettes. Vaping is designed to be a safer alternative to smoking that will help you quit smoking. For total beginners, we recommend looking at pen style kits as they are simple to use and usually come with everything you need to get started vaping. We also suggest looking at disposable vapes as they require no set up and come ready to go straight away. If you’re looking for some more info and help with getting started vaping, contact our customer care team.</p>-->
+<!--          </div>-->
+<!--          <div class="item__img">-->
+<!--            <img src="https://d1q4q7ketxgxfn.cloudfront.net/media/catalog/product/cache/312af16b4230f9639b105af4a9030f8d/v/a/vaporesso-gen-200-aurora-green_1.jpg" alt="">-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="section3__content-item reverse" data-aos="fade-up" data-aos-duration="800">-->
+<!--          <div class="item__img">-->
+<!--            <img src="https://d1q4q7ketxgxfn.cloudfront.net/media/catalog/product/cache/312af16b4230f9639b105af4a9030f8d/g/e/geekvape-aegis-max-2-mint-green_1.jpg" alt="">-->
+<!--          </div>-->
+<!--          <div class="item__description">-->
+<!--            <h3>Which Nicotine Strength Is Right For Me?</h3>-->
+<!--            <p>We recommend that the nicotine strength you choose should be largely based on the amount of cigarettes you previously smoked per day. For those that smoked 20+ cigarettes a day, we advise a stronger nicotine strength such as 18mg – 20mg. Nicotine Salts are the best way to vape higher strengths of nicotine due to their unique formulation that gives you a satisfying flavour and throat hit. For those that smoked around 10+ per day, e-liquids range in strength from 5mg – 10mg. It might take some experimenting to find the right nicotine strength for you but using this as a rough guide should help save you some time and money.</p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="section3__content-item" data-aos="fade-up" data-aos-duration="800">-->
+<!--          <div class="item__description">-->
+<!--            <h3>Which E-Liquid Should I Use?</h3>-->
+<!--            <p>E-Liquids come in loads of different flavours, formulations, and sizes. This means that you have plenty of choice to find your favourite all-day vape flavour, however it can be daunting to those that are just starting out. Certain kits work best with specific e-liquids, and so it’s important to get the right e-liquid formulation. When it comes to lower powered kits such as a lot of pod kits or pen kits, then high PG is the best e-liquid to use, however for those wanting to use a higher powered kit, then high VG (also know as sub ohm e-liquid) is what you’ll want. There is also the option to use 50/50 e-liquid which is super versatile and can be used in almost any type of kit.</p>-->
+<!--          </div>-->
+<!--          <div class="item__img">-->
+<!--            <img src="https://d1q4q7ketxgxfn.cloudfront.net/media/catalog/product/cache/312af16b4230f9639b105af4a9030f8d/o/b/obelisk_65_peacock_1.jpg" alt="">-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    </main>-->
+
+
+{% endblock %}
+
+	<!-- New Arrivals section start -->
+<!-- <div id="sidebar">-->
+<!--        <h3>Categories</h3>-->
+<!--        <ul>-->
+<!--            <li {% if not category %}class="selected"{% endif %}>-->
+<!--                <a href="{% url "shop:product_list" %}">All</a>-->
+<!--            </li>-->
+<!--            {% for c in categories %}-->
+<!--                <li {% if category.slug == c.slug %}class="selected"{% endif %}>-->
+<!--                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>-->
+<!--                </li>-->
+<!--            {% endfor %}-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--    <div id="main" class="product-list">-->
+<!--        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>-->
+<!--        {% for product in products %}-->
+<!--            <div class="item">-->
+<!--                <a href="{{ product.get_absolute_url }}">-->
+<!--                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">-->
+<!--                </a>-->
+<!--                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>-->
+<!--                ${{ product.price }}-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+   	<!-- New Arrivals section end -->
+	<!-- section footer start -->

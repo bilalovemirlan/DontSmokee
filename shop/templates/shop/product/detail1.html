@@ -1,0 +1,54 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+
+  <div class="collection_text">products</div>
+    <div class="collection_section layout_padding">
+    	<div class="container">
+    		<h1 class="new_text"><strong>Описание</strong></h1>
+    	    <p class="consectetur_text">{{ product.description }}</p>
+    	</div>
+    </div>
+
+
+<section>
+			<div class="details container">
+				<div class="details-action">
+					<div class="details-action-box" style="width: 300px;">
+						<img style="width: 800px; border-radius: 20px;"
+							src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"
+							alt="Фото курса"
+							class="details-action-box-img"
+						/>
+						<br>
+						<br>
+						<br>
+						<h2 class="">{{ product.price }} сом</h2>
+					</div>
+
+				</div>
+				<div class="details-content">
+					<div class="details-content-title">
+						<h1>{{ product.name }}</h1>
+					</div>
+					<p class="details-content-desc">
+
+					</p>
+
+					<div class="details-fieldset">
+						<div class="details-fieldset-title">Выберите колличество товара</div>
+						<form action="{% url 'cart_add' product.id %}" method="post">
+							<div class="details-fieldset-section">
+								<h4 class="details-fieldset-section-title">{{ cart_product_form }}</h4>
+							{% csrf_token %}
+							<input style="font-size: 17px;" class="btn btn-success " type="submit" value="Add to cart">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+{% endblock %}
+
+<

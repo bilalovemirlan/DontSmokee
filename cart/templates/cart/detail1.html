@@ -1,0 +1,52 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+    Your shopping cart
+{% endblock %}
+{% block content %}
+    <h1>Your shopping cart</h1>
+    <table class="cart">
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+            <th>Unit price</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+ {% for item in cart %}
+            {% with product=item.product %}
+        <tr class="total">
+            <td colspan="0" class="num"><img style="width: 80px; border-radius: 5px; padding: 5px;"
+							src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"
+							alt="Фото курса"
+							class="details-action-box-img"
+						/></td>
+            <td class="num">{{ product.name }}</td>
+            <td colspan="0" class="num">{{ item.quantity }}</td>
+            <td class="num"><a class="btn btn-warning" href="{% url 'cart_remove' product.id%}">Remove</a></td>
+            <td colspan="1  ">{{ product.price }} сом</td>
+            <td class="num">*</td>
+        </tr>
+{% endwith %}
+
+        {% endfor %}
+<tr class="total">
+
+            <td colspan="5"></td>
+            <td class="num">${{ cart.get_total_price }}</td>
+        </tr>
+
+
+        </tbody>
+    </table>
+    <p class="text-right">
+        <a href="{% url 'product_list' %}" class="btn btn-success">Continue shopping</a>
+<a href="{% url 'order_create' %}" class="btn btn-warning">
+    Checkout
+</a>
+    </p>
+{% endblock %}

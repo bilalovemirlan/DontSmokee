@@ -1,0 +1,77 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block head %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/detail/detail.css' %}">
+<!--    <link rel="stylesheet" href="{% static 'css/main/main.css' %}">-->
+{% endblock %}
+{% block title %}dasd{% endblock %}
+
+
+{% block content %}
+<!--    <main>-->
+<!--        <form action="{% url 'cart_add' product.id %}" method="post">-->
+<!--        <div class="item">-->
+<!--            <div class="item__img">-->
+<!--                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="">-->
+<!--            </div>-->
+<!--            <div class="item__description">-->
+
+<!--                <div class="item__description-content">-->
+<!--                    <h2>{{ product.name }}</h2>-->
+<!--                    <h3>{{ product.price }} сом</h3>-->
+<!--                    {% csrf_token %}-->
+<!--                    <br>-->
+<!--                    {{ cart_product_form }}-->
+<!--                    <br>-->
+<!--                    <button class="addToCart" type="submit" >ADD TO CART</button>-->
+<!--    -->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--            </form>-->
+<!--<div class="section3">-->
+<!--    <div class="section3__content" style="margin: 100px;">-->
+<!--        <div class="section3__content-item" data-aos="fade-up" data-aos-duration="800">-->
+
+<!--          <div class="item__description2">-->
+<!--            <h3>{{ product.name }}</h3>-->
+<!--            <p>{{ product.description }}</p>-->
+<!--          </div>-->
+<!--          <div class="item__img">-->
+<!--            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--    </main>-->
+
+
+
+    <main>
+        <div class="item">
+            <div class="item__img">
+                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="">
+            </div>
+            <div class="item__description">
+                <div class="item__description-content">
+                    <h2>{{ product.title }}</h2>
+                    <h3>{{ product.price }} сом</h3>
+                    <p>{{ product.description }}</p>
+                    <p>Количество: <input value="1" min="1" type="number"></p>
+                    <a href="https://api.whatsapp.com/send?phone=996704512655#text=Здравствуйте, хочу купить {{ product.title }}" target="_blank">
+                      <button class="addToCart" >ОФОРМИТЬ ЗАКАЗ</button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

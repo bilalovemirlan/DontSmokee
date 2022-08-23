@@ -1,0 +1,453 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Gill"; 
+    src: url("../../assets/fonts/Gill\ Sans.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+
+// !======================== Header Styles Start ========================
+nav{
+    height: 6rem;
+    width: 100%;
+    // box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.nav-logo{
+    align-self: center;
+    margin-left: 120px;
+    text-align: center;
+    a{
+        text-decoration: none;
+    }
+}
+.logo {
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    font-size: 26px;
+    font-weight: 700;
+    transition: 0.38s;
+    letter-spacing: 0.8px;
+}
+
+.logo:hover{
+    color: #dc5661;
+    transition: 0.38s;
+    cursor: pointer;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 50vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    letter-spacing: 1.3px;
+    font-size: 21px;
+    font-weight: 400;
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: #717275;
+    transition: 0.4s;
+    font-weight: 300;
+}
+.nav-links li a:hover {
+    color: #de4e45;
+    transition: 0.4s;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links li a:hover::before{
+    width: 80%;
+}
+
+.login-button{
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+.login-button:hover {
+    color: #131418;
+    background-color: #f2f5f7;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+.join-button{
+    color: #131418;
+    background-color: #61DAFB;
+    border: 1.5px solid #61DAFB;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.join-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #131418;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+.hamburger{
+    display: none;
+}
+
+    nav{
+        position: fixed;
+        z-index: 3;
+        height: 4.5rem;
+        background-color: white;
+        justify-content: space-evenly;
+    }
+    .nav-logo{
+        margin-left: 0;
+    }
+    .nav-links li a{
+        color: white;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: #131418;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+    background-color: white;
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    background-color: white;
+    width:0;
+}
+.toggle .line3{
+    background-color: white;
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.header__block{
+    background-image: url("https://superultrawidewallpaper.com/wp-content/uploads/2019/07/cactus-jack-3840x1080-1860x523.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 445px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Gill";
+    letter-spacing: 2.5px;
+    h2{
+        font-size: 76px;
+        color: white;
+        font-weight: 700;
+    }
+    h3{
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+    }
+}
+
+// ! Main Content
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+section{
+    width: 62%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+    h3{
+        font-size: 56px;
+        font-weight: 700;
+        font-family: "Gill";
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    align-content: space-between;
+    width: 80%;
+}
+
+.form__number-name{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    input{
+        width: 100%;
+        height: 24px;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
+}
+
+label{
+    margin-bottom: 8px;
+    margin-top: 20px;
+    color: rgb(113, 114, 117);
+    font-size: 21px;
+    font-weight: 600;
+    transition: 0.38s;
+    font-family: "Gill";
+}
+
+label:hover{
+    color: #de4e45;
+    transition: 0.38s;
+}
+
+input, textarea{
+    padding: 14px 10px;
+    border: 1px solid rgb(206, 212, 218);
+    border-radius: 5px;
+}
+
+textarea{
+    height: 120px;
+}
+
+input::placeholder, textarea::placeholder{
+    color: rgb(113, 114, 117);
+    font-weight: 200;
+    font-size: 16px;
+    font-family: "Gill";
+}
+
+input:focus, textarea:focus{
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+// !======================== Footer ======================================
+footer {
+    font-size: 16px;
+    background: white;
+    padding: 2em 4em;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 1em;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+  
+footer ul {
+    list-style: none;
+}
+  
+.col {
+    flex: 1;
+}
+  
+.col-title {
+    font-family: "Merriweather", serif;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 0.5em 0;
+}
+  
+.col-list a {
+    color: #717275;
+    text-decoration: none;
+    line-height: 1.4;
+    font-weight: 400;
+}
+  
+.col-list a:hover,
+.col-list a:focus {
+    text-decoration: underline;
+}
+  
+.subscribe-form,
+.social-media {
+    display: flex;
+    gap: 0.5em;
+    padding: 0.5em 0;
+}
+  
+.subscribe-input {
+    width: auto;
+    flex: 1;
+    background: transparent;
+    border: 0.06em solid #717275;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    transition: all 0.25s ease 0s;
+    display: inline-block;
+    color: #717275;
+}
+  
+.subscribe-input:focus {
+    outline: none;
+    border-color: #717275;
+    color: #717275;
+}
+  
+.subscribe-btn {
+    background: white;
+    border: none;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    transition: all 0.25s ease 0s;
+    display: inline-block;
+    color: black;
+    cursor: pointer;
+}
+  
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+    background: black;
+    color: white;
+}
+  
+.form-title,
+.social-col-title {
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+}
+  
+.social-media {
+    flex-direction: column;
+}
+  
+.social-media-list {
+    display: flex;
+    gap: 0.5rem;
+}
+  
+.social-media-list a {
+    padding: 0.5em;
+    color: black;
+    display: flex;
+    border-radius: 0.3em;
+    transition: all 0.25s ease 0s;
+}
+  
+.social-media-list a:hover,
+.social-media-list a:focus {
+    color: #717275;
+    background: #ffffff1a;
+}
+  
+.social-media-list svg {
+    width: 1.5em;
+    height: 1.5em;
+    transition: all 0.25s ease 0s;
+}
+  
+@media screen and (max-width: 750px) {
+    footer {
+      padding: 2em;
+      flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .form__number-name{
+        flex-direction: column;
+        div{
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section{
+        width: 90%;
+        h3{
+            font-size: 30px;
+        }
+    }
+}

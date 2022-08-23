@@ -1,0 +1,49 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/contact/contact.css' %}">
+{% endblock %}
+
+
+{% block title %}
+    {% if category %}{{ category.name }}{% else %}Contact{% endif %}
+{% endblock %}
+{% block content %}
+    <main>
+        <section>
+            <h3>Thank You</h3>
+            <div class="order-info">
+				<div class="details-fieldset-title"><h2>Your order has been successfully completed. Your order number is
+        <strong>{{ order.id }}</strong>.</h2></div>
+			</div>
+
+        </section>
+    </main>
+
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        const links = document.querySelectorAll(".nav-links li");
+        const nav = document.querySelector("nav")
+
+        hamburger.addEventListener('click', ()=>{
+            navLinks.classList.toggle("open");
+            links.forEach(link => {
+                link.classList.toggle("fade");
+            });
+            nav.style.position='fixed'
+            hamburger.classList.toggle("toggle");
+        });
+    </script>
+
+
+{% endblock %}
+
+
+

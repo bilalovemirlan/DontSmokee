@@ -1,0 +1,41 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.name }}{% else %}Contact{% endif %}
+{% endblock %}
+{% block content %}
+    <div class="collection_text">Contact Us</div>
+    <div class="layout_padding contact_section">
+    	<div class="container">
+    		<h1 class="new_text"><strong>Contact Now</strong></h1>
+    	</div>
+    	<div class="container-fluid ram">
+    		<div class="row">
+    			<div class="col-md-6">
+    				<div class="email_box">
+                    <div class="input_main">
+                       <div class="container">
+                          <form  method="post">
+                            {% csrf_token %}
+                              {{ form.as_p }}
+							  <div class="send_btn">
+                        <button type="submit" class="main_bt">Send</button>
+                       </div>
+					  </form>
+                       </div> 
+
+                    </div>
+    		</div>
+    			</div>
+    			<div class="col-md-6">
+    				<div class="shop_banner">
+    					<div class="our_shop">
+    						<button class="out_shop_bt">Our Shop</button>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+{% endblock %}
+
