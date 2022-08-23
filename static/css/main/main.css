@@ -177,7 +177,8 @@ nav {
   position: fixed;
   background: #131418;
   height: 100vh;
-  width: 100%;
+  right: 0;
+  width: 20%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -370,14 +371,18 @@ main {
   min-height: 550px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(https://vaping.com/media/catalog/category/DESKTOP-Sub-CategorySC-Fruit-US-2022x580.jpg);
   background-position: center;
+}
+
+.section2 img {
+  width: 100%;
 }
 
 .section3 {
   margin-top: 150px;
   width: 85%;
   font-family: "Gill";
+  padding-bottom: 100px;
 }
 
 .section3__title {

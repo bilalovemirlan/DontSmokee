@@ -179,7 +179,8 @@ nav {
   position: fixed;
   background: #131418;
   height: 100vh;
-  width: 100%;
+  width: 20%;
+  right: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;

@@ -288,8 +288,11 @@ main{
     min-height:550px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(https://vaping.com/media/catalog/category/DESKTOP-Sub-CategorySC-Fruit-US-2022x580.jpg);
+    // background-image: url(https://vaping.com/media/catalog/category/DESKTOP-Sub-CategorySC-Fruit-US-2022x580.jpg);
     background-position: center;
+    img{
+        width: 100%;
+    }
 }
 
 // ! ======================= Section3 ===================================

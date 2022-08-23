@@ -107,9 +107,14 @@
                 {% for i in products %}
                 <div data-aos="fade-up" data-aos-duration="500" class="productList__item">
                     <img src="{{ i.image.url }}" alt="Item image">
-                    <div class="productList__item-description">
-                        <h4 class="item-title" >{{ i.name }}</h4>
-                       <a style="text-decoration: None;" href="{{ i.get_absolute_url }}"><p class="item-price" >{{ i.price }} com</p></a>
+                    <div style="display: flex; justify-content: space-between;" class="productList__item-description">
+                        <!-- <h4 class="item-title" >{{ i.name }}</h4> -->
+                        <div>
+                          <a style="text-decoration: None; color: black; " href="{{ i.get_absolute_url }}"><h4 class="item-title" >{{ i.name }}</h4></a>
+                        </div>
+                        <div>
+                          <a style="text-decoration: None" href="{{ i.get_absolute_url }}"><p class="item-price" >{{ i.price }} com</p></a>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
@@ -118,7 +123,9 @@
     <!--!======================== Section 1 End ========================-->
 
     <!--!======================== Section 2 Start ========================-->
-    <div class="section2"></div>
+    <div class="section2">
+      <img src="https://vaping.com/media/catalog/category/DESKTOP-Sub-CategorySC-Fruit-US-2022x580.jpg" alt="">
+    </div>
 
     <!--!======================== Section 2 End ========================-->
 
